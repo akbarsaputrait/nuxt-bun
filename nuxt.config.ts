@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "nuxt-lucide-icons",
     "@nuxt/image",
+    "@nuxtjs/i18n",
   ],
 
   eslint: {
@@ -124,6 +125,31 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+
+  i18n: {
+    baseUrl: "https://nuxt-bun.vercel.app",
+    langDir: "../src/locales",
+    defaultLocale: "en",
+    locales: [
+      {
+        code: "en",
+        language: "en-US",
+        file: "en.ts",
+      },
+      {
+        code: "id",
+        language: "id-ID",
+        files: ["id.ts"],
+      },
+    ],
+    strategy: "no_prefix",
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: "nuxt_i18n",
+      redirectOn: "root", // recommended
+    },
+    lazy: true,
   },
 
   components: {

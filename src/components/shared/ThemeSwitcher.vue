@@ -7,13 +7,11 @@ function toggleTheme() {
 </script>
 
 <template>
-  <div class="flex items-center fixed top-4 right-4">
-    <Button size="icon" variant="outline" class="ml-auto" @click="toggleTheme">
-      <ClientOnly>
-        <IconSun v-if="colorMode.value === 'dark'" />
-        <IconMoon v-else />
-      </ClientOnly>
-    </Button>
-  </div>
+  <Button size="icon" variant="outline" class="ml-auto" @click="toggleTheme">
+    <ClientOnly>
+      <IconSun v-if="colorMode.value === 'dark'" />
+      <IconMoon v-else />
+    </ClientOnly>
+  </Button>
 </template>
 <!-- End Generation Here -->

@@ -1,4 +1,6 @@
 <script setup>
+const { t } = useI18n();
+
 const simpleIconUrl = "https://cdn.simpleicons.org";
 const technologies = [
   {
@@ -32,12 +34,12 @@ useSeoMeta({
   <div class="container py-24 lg:py-32">
     <!-- Announcement Banner -->
     <div class="flex justify-center">
-      <a
+      <span
         class="inline-flex items-center gap-x-2 border text-sm p-1 ps-3 rounded-full transition"
         href="#"
       >
-        Crafting Lightning-Fast ⚡️
-      </a>
+        {{ t("crafting") }} ⚡️
+      </span>
     </div>
     <!-- End Announcement Banner -->
     <!-- Title -->
@@ -51,17 +53,21 @@ useSeoMeta({
     <!-- End Title -->
     <div class="mt-5 max-w-3xl text-center mx-auto">
       <p class="text-xl text-muted-foreground">
-        Transforming Digital Landscapes: High-Performance Web Applications 💻
+        {{ t("description1") }} 💻
         <br />
-        Engineered for Maximum Visibility and Blazing Speed 🌟
+        {{ t("description2") }} 🌟
       </p>
     </div>
     <!-- Buttons -->
     <div class="mt-8 gap-3 flex justify-center">
-      <Button size="lg"> View Projects 👀 </Button>
+      <Button size="lg" as-child>
+        <a href="https://github.com/akbarsaputrait/nuxt-bun" target="_blank">
+          {{ t("viewProject") }} 👀
+        </a>
+      </Button>
       <Button size="lg" variant="outline" as-child>
         <a href="https://github.com/akbarsaputrait" target="_blank">
-          Let's Connect 🤝
+          {{ t("connect") }} 🤝
         </a>
       </Button>
     </div>
